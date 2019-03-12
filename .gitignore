@@ -4,6 +4,7 @@
 # misc
 .DS_Store
 .env
+webpack.dev.config.js
 sass.sh
 /dev_json/google_fic.json
 /dev_json/google_middle.json
