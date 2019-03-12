@@ -1,3 +1,5 @@
+var webpack = require('webpack');
+const {EnvironmentPlugin} = require("webpack");
 
 module.exports = {
   entry: './src/index.js',
@@ -15,6 +17,9 @@ module.exports = {
       }
     ]
   },
+  plugins:[
+    new webpack.EnvironmentPlugin(['NYT_API_KEY', 'TMDB_API_KEY', 'GOOGLE_BOOK_API_KEY'])
+  ],
   resolve: {
     extensions: ['*', '.js', '.jsx']
   },

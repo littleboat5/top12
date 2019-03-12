@@ -12,7 +12,9 @@ class App extends Component {
 
   render() {
     console.log("index.js")
-    console.log(process.env)
+    console.log(process.env.NYT_API_KEY)
+    console.log(process.env.TMDB_API_KEY)
+    console.log(process.env.GOOGLE_BOOK_API_KEY)
 
     return(
       <div>
