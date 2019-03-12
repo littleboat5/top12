@@ -5,7 +5,14 @@
 .DS_Store
 .env
 sass.sh
-/dev_json
+/dev_json/google_fic.json
+/dev_json/google_middle.json
+/dev_json/google_nonfic.json
+/dev_json/google_series.json
+/dev_json/nyt_fic.json
+/dev_json/nyt_nonfic.json
+/dev_json/nyt_middle.json
+/dev_json/nyt_series.json
 
 # logs
 npm-debug.log*
