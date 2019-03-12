@@ -11,6 +11,9 @@ app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist/index.html'));
 });
 
+console.log("server.js")
+console.log(process.env)
+
 app.listen(port, ()=>{
     console.log(`top12 server started at port: ${port}`);
 });

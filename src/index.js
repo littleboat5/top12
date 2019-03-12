@@ -11,13 +11,15 @@ class App extends Component {
   }
 
   render() {
+    console.log("index.js")
+    console.log(process.env)
 
     return(
       <div>
         <Header />
         <div className="container">
           <div className="row" >
-            
+
             <Movies/>
 
           </div>
