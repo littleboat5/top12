@@ -7,7 +7,7 @@
     "start": "node server.js",
     "dev": "webpack-dev-server --config ./webpack.dev.config.js --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack -p",
+    "dev-build": "webpack --config ./webpack.config.js --mode production",
     "heroku-postbuild": "webpack --config ./webpack.config.js --mode production"
   },
   "author": "Cynthia Wong",

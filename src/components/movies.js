@@ -70,9 +70,7 @@ class Movies extends Component {
       $("#accord-movies").addClass("collapse");
     }
 
-console.log("tmdb: "+process.env.TMDB_API_KEY)
-console.log("nyt: "+process.env.NYT_API_KEY)
-console.log("google: "+process.env.GOOGLE_BOOK_API_KEY)
+console.log(process.env)
 
     return(
       <div id='moviebloc' className="col-12 col-lg-6 ">
