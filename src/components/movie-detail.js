@@ -74,7 +74,7 @@ class MovieDetail extends Component {
       if( !movie.poster_path || !movie.poster_path.length )
         return ("");
 
-      let image = this.props.config.images.base_url+this.props.config.images.poster_sizes[4]+'/'+movie.poster_path;
+      let image = this.props.config.images.secure_base_url+this.props.config.images.poster_sizes[4]+'/'+movie.poster_path;
 
       return(
         <div key={`${index}${movie.id}`} className='item-box'>
