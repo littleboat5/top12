@@ -4,7 +4,7 @@
 # misc
 .DS_Store
 .env
-webpack.dev.config.js
+#webpack.dev.config.js
 sass.sh
 /dev_json/config.json
 /dev_json/genres.json

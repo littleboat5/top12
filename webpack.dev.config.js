@@ -1,12 +1,11 @@
-var webpack = require('webpack');
-const {EnvironmentPlugin} = require("webpack");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/index.js',
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js' 
+    filename: 'bundle.js' //webpack 4 by default >> main.js if didn't specify bundle.js
   },
   module: {
     rules: [
@@ -18,7 +17,7 @@ module.exports = {
     ]
   },
   plugins:[
-    new webpack.EnvironmentPlugin(['NYT_API_KEY', 'TMDB_API_KEY', 'GOOGLE_BOOK_API_KEY'])
+    new Dotenv()
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx']
