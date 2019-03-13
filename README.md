@@ -2,6 +2,7 @@
 This is a React front-end app where data are retrieved through 3rd party APIs.
 - Books: bestseller lists from New York Times books reviews
 - Movies: TMDB (themoviedb.org)
+
 I will continue to add more categories, here are a few I am working on:
 - Games
 - Apps
