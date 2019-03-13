@@ -71,6 +71,7 @@ class BookList extends Component {
 // one API call to look up all items in the books array
       const googlebook_API = `${googlebook_base_URL}${isbn_string}&key=${process.env.GOOGLE_BOOK_API_KEY}`;
 
+
 // Second ajax request to get book cover image for all books on list
       $.getJSON( googlebook_API, data=>{ //comment out per temp code
 
@@ -102,6 +103,7 @@ correspond to one book in the books array, which is returned by the NYT api
             let book = books.find( b1=>b1.primary_isbn13===google_isbns[i].identifier);
             if(book){ //matched! update cover_img in books
               book.cover_img = thumbnail ? thumbnail : smallThumbnail;
+              book.cover_img = book.cover_img.replace("http", "https");
               return; //break from the for loop
             }
           }
