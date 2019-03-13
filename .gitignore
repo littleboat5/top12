@@ -6,6 +6,9 @@
 .env
 webpack.dev.config.js
 sass.sh
+/dev_json/config.json
+/dev_json/genres.json
+/dev_json/movies.json
 /dev_json/google_fic.json
 /dev_json/google_middle.json
 /dev_json/google_nonfic.json

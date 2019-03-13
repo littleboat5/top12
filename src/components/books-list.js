@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-//temp code begin
+// //temp code begin
 // import nonfic from './../../dev_json/google_nonfic.json';
 // import fic from './../../dev_json/google_fic.json';
 // import middle from './../../dev_json/google_middle.json';
@@ -9,7 +9,7 @@ import React, { Component } from 'react';
 // import nyt_fic from './../../dev_json/nyt_fic.json';
 // import nyt_series from './../../dev_json/nyt_series.json';
 // import nyt_middle from './../../dev_json/nyt_middle.json';
-//temp code ends
+// //temp code ends
 
 class BookList extends Component {
   constructor(){
@@ -32,20 +32,20 @@ class BookList extends Component {
     let books = [];
     const nyt_API = `https://api.nytimes.com/svc/books/v3/lists.json?api-key=${process.env.NYT_API_KEY}&list=${this.props.listname}`;
 
-// temp code begin
-let data;
-if(this.props.listname === 'combined-print-and-e-book-nonfiction')
-  data = nyt_nonfic;
-else if(this.props.listname === 'combined-print-and-e-book-fiction' )
-  data = nyt_fic;
-else if(this.props.listname === 'series-books')
-  data = nyt_series;
-else if(this.props.listname === 'childrens-middle-grade-hardcover')
-  data = nyt_middle;
-// temp code end
+// // temp code begin
+// let data;
+// if(this.props.listname === 'combined-print-and-e-book-nonfiction')
+//   data = nyt_nonfic;
+// else if(this.props.listname === 'combined-print-and-e-book-fiction' )
+//   data = nyt_fic;
+// else if(this.props.listname === 'series-books')
+//   data = nyt_series;
+// else if(this.props.listname === 'childrens-middle-grade-hardcover')
+//   data = nyt_middle;
+// // temp code end
 
-
-    // $.getJSON(nyt_API, data=>{ // comment out per temp code
+// First ajax request: get bestseller per book genre
+    $.getJSON(nyt_API, data=>{ // comment out per temp code
       $.each( data.results, function( index, val ) {
         const {amazon_product_url} = val;
         const {title, author, description, primary_isbn13} = val.book_details[0];
@@ -54,7 +54,7 @@ else if(this.props.listname === 'childrens-middle-grade-hardcover')
         books.push( {title, author, description, cover_img, primary_isbn13, amazon_product_url} );
       }); //end .each
 
-    // }).done( ()=>{ // comment out per temp code
+    }).done( ()=>{ // comment out per temp code
 
 /* After getting the bestseller list from NYT, use google books API to retrieve
    the book cover image. Since a free developer account is limited to 1000 request
@@ -71,18 +71,19 @@ else if(this.props.listname === 'childrens-middle-grade-hardcover')
 // one API call to look up all items in the books array
       const googlebook_API = `${googlebook_base_URL}${isbn_string}&key=${process.env.GOOGLE_BOOK_API_KEY}`;
 
-      // $.getJSON( googlebook_API, data=>{ //comment out per temp code
+// Second ajax request to get book cover image for all books on list
+      $.getJSON( googlebook_API, data=>{ //comment out per temp code
 
-//temp code begin
-if(this.props.listname === 'combined-print-and-e-book-nonfiction')
-  data = nonfic;
-else if(this.props.listname === 'combined-print-and-e-book-fiction' )
-  data = fic;
-else if(this.props.listname === 'series-books')
-  data = series;
-else if(this.props.listname === 'childrens-middle-grade-hardcover')
-  data = middle;
-//temp code ends
+// //temp code begin
+// if(this.props.listname === 'combined-print-and-e-book-nonfiction')
+//   data = nonfic;
+// else if(this.props.listname === 'combined-print-and-e-book-fiction' )
+//   data = fic;
+// else if(this.props.listname === 'series-books')
+//   data = series;
+// else if(this.props.listname === 'childrens-middle-grade-hardcover')
+//   data = middle;
+// //temp code ends
 
         data.items.map( (b)=>{
 /* b now contains info about one book returned by the google API, it should
@@ -106,16 +107,16 @@ correspond to one book in the books array, which is returned by the NYT api
           }
         });
 
-      // }).done( ()=>{ // comment out per temp code
+      }).done( ()=>{ // comment out per temp code
         books = books.filter( b1=>b1.cover_img.length > 0) //keep only books with a cover image
         this.setState({booklist: books.slice(0,12)});
-/* comment out per temp code
+
       }).fail( (error)=>{ //may be i've exceed the 1000 request per day limit!
         console.log(error)
       }); //end getJSON (googlebook)
 
-    // }); //.done from nyt_API
-*/
+    }); //.done from nyt_API
+
   }
 /*=============================================*/
   renderBook(book){

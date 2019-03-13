@@ -68,13 +68,13 @@ class MovieDetail extends Component {
 
 /*=============================================*/
     render(){
-      const {index} = this.props; //values passed down from movies-list.js
+      const {index, config} = this.props; //values passed down from movies-list.js
       let {movie} = this.state; //this.state.movie is set at componentDidMount
 
       if( !movie.poster_path || !movie.poster_path.length )
         return ("");
 
-      let image = this.props.config.images.secure_base_url+this.props.config.images.poster_sizes[4]+'/'+movie.poster_path;
+      let image = config.secure_base_url+config.poster_sizes[4]+'/'+movie.poster_path;
 
       return(
         <div key={`${index}${movie.id}`} className='item-box'>
@@ -92,8 +92,10 @@ class MovieDetail extends Component {
             </iframe>
           </div>
 
-          <h3 className='card-title'>{movie.title} ({movie.release_date.slice(0,4)})</h3>
-          <h4 className='card-text'>{movie.overview}</h4>
+          <div className='item-box'>
+            <h3 className='card-title'>{movie.title} ({movie.release_date.slice(0,4)})</h3>
+            <h4 className='card-text'>{movie.overview}</h4>
+          </div>
         </div>
       );
 

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
+
 import MovieList from './movies-list';
 
-//temp code
-import config from './../../dev_json/config.json';
-import g from './../../dev_json/genres.json';
-//temp code
+// //temp code
+// import config from './../../dev_json/config.json';
+// import g from './../../dev_json/genres.json';
+// //temp code
 
 class Movies extends Component {
 
@@ -16,33 +18,38 @@ class Movies extends Component {
       imageconfig:{}
     }
 
-//     const tmdb_API_key = `api_key=${process.env.TMDB_API_KEY}`;
-//
-// // get genre list
-//     let tmdb_URL = `https://api.themoviedb.org/3/genre/movie/list?${tmdb_API_key}&language=en-US`;
-//     $.getJSON(tmdb_URL, data=>{
-//       this.setState({genrelist: data.genres});
-//     });
-//
-// // get TMDB configuration, for use when displaying poster image etc
-//     tmdb_URL = `https://api.themoviedb.org/3/configuration?${tmdb_API_key}`;
-//     $.getJSON(tmdb_URL, data=>{
-//       this.setState({imageconfig: data.images});
-//     });
-
-    this.renderItem = this.renderItem.bind(this);
+    this.renderGenre = this.renderGenre.bind(this);
   }
 /*=============================================*/
   componentDidMount(){
-    //temp code begin
-    this.setState({genrelist: g.genres});
-    this.setState({imageconfig: config});
-    //temp code ends
+
+    const supported_genres = ['Action', 'Animation', 'Comedy', 'Drama', 'Family', 'Horror', 'Romance', 'Science Fiction'];
+    const tmdb_API_key = `api_key=${process.env.TMDB_API_KEY}`;
+
+// get genre list
+    let tmdb_URL = `https://api.themoviedb.org/3/genre/movie/list?${tmdb_API_key}&language=en-US`;
+    let genres = [];
+
+    $.getJSON(tmdb_URL, data=>{
+      genres = data.genres.filter( g=> _.includes(supported_genres, g.name) );
+      this.setState({genrelist: genres});
+    });
+
+// get TMDB configuration, for use when displaying poster image etc
+    tmdb_URL = `https://api.themoviedb.org/3/configuration?${tmdb_API_key}`;
+    $.getJSON(tmdb_URL, data=>{
+      this.setState({imageconfig: data.images});
+    });
+
+    // //temp code begin
+    // this.setState({genrelist: g.genres});
+    // this.setState({imageconfig: config});
+    // //temp code ends
 
   }
 
 //============================================================
-  renderItem(genre, index){
+  renderGenre(genre, index){
     return(
       <div key={genre.name}>
         <div id={`btn-genre${genre.id}`}>
@@ -70,10 +77,6 @@ class Movies extends Component {
       $("#accord-movies").addClass("collapse");
     }
 
-console.log(process.env.NYT_API_KEY)
-console.log(process.env.TMDB_API_KEY)
-console.log(process.env.GOOGLE_BOOK_API_KEY)
-
     return(
       <div id='moviebloc' className="col-12 col-lg-6 ">
         <div className='flip-container'>
@@ -94,7 +97,7 @@ console.log(process.env.GOOGLE_BOOK_API_KEY)
                 <button className="btn button-flip" onClick={flip2Front.bind(this)}>
                   <i className="fas fa-2x fa-chevron-circle-left"></i>
                 </button>
-                {this.state.genrelist.map(this.renderItem)}
+                {this.state.genrelist.map(this.renderGenre)}
               </div>
             </div>
 
