@@ -48,7 +48,6 @@ class Books extends Component {
               <div className="inner">
                 <button className='btn button-book'
                         onClick={flip2Back.bind(this)}>
-                  <h1>Books</h1>
                 </button>
               </div>
             </div>
@@ -59,6 +58,11 @@ class Books extends Component {
                 <button className="btn button-flip" onClick={flip2Front.bind(this)}>
                   <i className="fas fa-2x fa-chevron-circle-left"></i>
                 </button>
+
+                <div className='credits' >
+                  <small>Data provided by <a href="https://www.nytimes.com/books/best-sellers/" target="_blank">New York Times</a></small>
+                </div>
+
                 {this.renderItem( 'books-non-fiction',
                                   'combined-print-and-e-book-nonfiction',
                                   'Non-Fiction')}

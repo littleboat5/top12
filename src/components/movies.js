@@ -87,7 +87,6 @@ class Movies extends Component {
               <div className="inner">
                 <button className='btn button-movie'
                         onClick={flip2Back.bind(this)}>
-                  <h1>Movies</h1>
                 </button>
               </div>
             </div>
@@ -97,6 +96,9 @@ class Movies extends Component {
                 <button className="btn button-flip" onClick={flip2Front.bind(this)}>
                   <i className="fas fa-2x fa-chevron-circle-left"></i>
                 </button>
+                <div className='credits' >
+                  <small>Data provided by <a href="https://www.themoviedb.org/" target="_blank">TMDB</a></small>
+                </div>
                 {this.state.genrelist.map(this.renderGenre)}
               </div>
             </div>

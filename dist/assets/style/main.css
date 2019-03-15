@@ -18,7 +18,12 @@ body {
   font-size: 2em;
 }
 
-.bloc-games, .bloc-movies, .bloc-books {
+.credits {
+  float: right;
+  padding-top: 0.5em;
+}
+
+.bloc-music, .bloc-movies, .bloc-books {
   width: 100%;
   padding: 1em;
   margin-bottom: 1em;
@@ -33,41 +38,37 @@ body {
 }
 
 .bloc-books {
-  background-color: rgba(68, 240, 253, 0.4);
+  background-color: #5478d5;
   color: black;
 }
 
 .bloc-movies {
-  background-color: rgba(240, 160, 55, 0.8);
+  background-color: #df4883;
 }
 
-.bloc-games {
-  background-color: rgba(220, 9, 44, 0.8);
+.bloc-music {
+  background-color: #47c26c;
 }
 
-.button-genral, .button-game, .button-movie, .button-book {
+.button-general, .button-music, .button-movie, .button-book {
   width: 100%;
-  text-transform: uppercase;
-  text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .button-book {
   height: 100%;
-  background-color: rgba(68, 240, 253, 0.4);
-  color: black;
-  background-size: auto;
+  background-image: url("./../images/bloc-bg-books.png");
 }
 
 .button-movie {
   height: 100%;
-  background-color: rgba(240, 160, 55, 0.8);
-  color: black;
+  background-image: url("./../images/bloc-bg-movies.png");
 }
 
-.button-game {
+.button-music {
   height: 100%;
-  background-color: rgba(220, 9, 44, 0.8);
-  color: black;
+  background-image: url("./../images/bloc-bg-music.png");
 }
 
 .button-flip {

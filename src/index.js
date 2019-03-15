@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import Header from './components/header';
 import Books from './components/books';
 import Movies from './components/movies';
-// import Games from './components/games';
+import Music from './components/music';
 
 class App extends Component {
   constructor(props){
@@ -18,8 +18,9 @@ class App extends Component {
         <div className="container">
           <div className="row" >
             <Books />
-            <Movies/>
 
+            <Movies />
+            <Music />
           </div>
         </div>
       </div>

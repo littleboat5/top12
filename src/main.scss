@@ -1,13 +1,17 @@
 // variables
 $font-general: 'Sarabun', sans-serif;
 $bgcolor-general: rgba(0, 0, 0, 0.2);
-$bgcolor-books: rgba(68, 240, 253,0.4);
-$bgcolor-movies: rgba(240, 160, 55, 0.8);
-$bgcolor-games: rgba(220, 9, 44, 0.8);
+$bgcolor-books: rgb(84,120,213);
+$bgcolor-movies: rgb(223,72,131);
+$bgcolor-music: rgb(71,194,108);
 $bgcolor-transparent: rgba(0,0,0,0);
 $text-color: black;
 
-//=========== main
+$bg-music: url('./../images/bloc-bg-music.png');
+$bg-books: url('./../images/bloc-bg-books.png');
+$bg-movies: url('./../images/bloc-bg-movies.png');
+
+//=========== general
 body {
   background-color: $bgcolor-general;
 }
@@ -22,6 +26,10 @@ body {
 }
 .nav-item{
   font-size: 2em;
+}
+.credits {
+  float:right;
+  padding-top: 0.5em;
 }
 //============ bloc
 %bloc-back{
@@ -45,35 +53,37 @@ body {
   @extend %bloc-back;
   background-color: $bgcolor-movies;
 }
-.bloc-games {
+.bloc-music {
   @extend %bloc-back;
-  background-color: $bgcolor-games;
+  background-color: $bgcolor-music;
 }
+
 //============== buttons
-.button-genral {
+.button-general {
   width:100%;
-  text-transform: uppercase;
-  text-align: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+  // text-transform: uppercase;
+  // text-align: center;
 }
 .button-book {
-  @extend .button-genral;
+  @extend .button-general;
   height: 100%;
-  background-color: $bgcolor-books;
-  color: $text-color;
-  // background: url(https://i.imgur.com/2XCp3RA.jpg) no-repeat center center;
-  background-size: auto;
+  background-image: $bg-books;
+  // color: $text-color;
+  // background-size: auto;
 }
 .button-movie {
-  @extend .button-genral;
+  @extend .button-general;
   height: 100%;
-  background-color: $bgcolor-movies;
-  color: $text-color;
+  background-image: $bg-movies;
+  // color: $text-color;
 }
-.button-game {
-  @extend .button-genral;
+.button-music {
+  @extend .button-general;
   height: 100%;
-  background-color: $bgcolor-games;
-  color: $text-color;
+  background-image: $bg-music;
+  // color: $text-color;
 }
 .button-flip{
   background-color: $bgcolor-transparent;

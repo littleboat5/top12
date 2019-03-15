@@ -14,6 +14,7 @@ class Header extends Component {
               <div className=" navbar-nav ">
                   <a className="nav-item nav-link " href="#bookbloc">Books</a>
                   <a className="nav-item nav-link " href="#moviebloc">Movies</a>
+                  <a className="nav-item nav-link " href="#musicbloc">Music</a>
               </div>
           </div>
         </nav>
