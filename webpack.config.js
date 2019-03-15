@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js' 
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -18,7 +18,11 @@ module.exports = {
     ]
   },
   plugins:[
-    new webpack.EnvironmentPlugin(['NYT_API_KEY', 'TMDB_API_KEY', 'GOOGLE_BOOK_API_KEY'])
+    new webpack.EnvironmentPlugin([
+      'NYT_API_KEY',
+      'TMDB_API_KEY', 
+      'GOOGLE_BOOK_API_KEY',
+      'LASTFM_API_KEY'])
   ],
   resolve: {
     extensions: ['*', '.js', '.jsx']

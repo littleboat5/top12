@@ -42,7 +42,7 @@ class MusicList extends Component {
 // console.log(country)
     const method_str = country ? `${method}${country}` : method;
 
-    const fm_API = `http://ws.audioscrobbler.com/2.0/?method=${method_str}&api_key=${process.env.LASTFM_API_KEY}&format=json`;
+    const fm_API = `https://ws.audioscrobbler.com/2.0/?method=${method_str}&api_key=${process.env.LASTFM_API_KEY}&format=json`;
 
     $.getJSON(fm_API, data=>{
       switch (method) {
