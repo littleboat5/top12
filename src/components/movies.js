@@ -53,7 +53,7 @@ class Movies extends Component {
     return(
       <div key={genre.name}>
         <div id={`btn-genre${genre.id}`}>
-          <a className="list-group-item list-group-item-action button-genral" role="button" data-toggle="collapse" data-target={`#genre${genre.id}`} href={`#genre${genre.id}`} aria-expanded="true" aria-controls={`genre${genre.id}`}>
+          <a className="list-group-item list-group-item-action button-general" role="button" data-toggle="collapse" data-target={`#genre${genre.id}`} href={`#genre${genre.id}`} aria-expanded="true" aria-controls={`genre${genre.id}`}>
            <h2>{genre.name}</h2>
           </a>
         </div>
