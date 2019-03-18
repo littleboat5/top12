@@ -18,7 +18,7 @@ class Music extends Component {
     return(
       <div>
         <div id={`btn-${id}`}>
-          <a className="list-group-item list-group-item-action button-genral" role="button" data-toggle="collapse" data-target={`#${id}`} href={`#${id}`} aria-expanded="true" aria-controls={id}>
+          <a className="list-group-item list-group-item-action button-general" role="button" data-toggle="collapse" data-target={`#${id}`} href={`#${id}`} aria-expanded="true" aria-controls={id}>
            <h2>{displayname}</h2>
           </a>
         </div>

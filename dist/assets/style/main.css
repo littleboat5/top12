@@ -81,6 +81,10 @@ body {
 
 @keyframes no-show {
   0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
     height: 100%;
     width: 100%;
@@ -94,6 +98,10 @@ body {
     width: 0;
   }
   100% {
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
     transform: rotateY(180deg);
     height: 0;
     width: 0;
@@ -101,6 +109,10 @@ body {
 }
 @keyframes show {
   0% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     height: 0;
     width: 0;
@@ -114,6 +126,10 @@ body {
     width: 100%;
   }
   100% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
     transform: rotateY(0deg);
     height: 100%;
     width: 100%;
@@ -142,6 +158,10 @@ body {
 
 .front {
   z-index: 2;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
   animation-name: show;
   height: 100%;
@@ -151,6 +171,10 @@ body {
 }
 
 .back {
+  -webkit-transform: rotateY(-180deg);
+  -moz-transform: rotateY(-180deg);
+  -ms-transform: rotateY(-180deg);
+  -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
   animation-name: no-show;
 }
