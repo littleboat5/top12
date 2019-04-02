@@ -18,9 +18,9 @@ class App extends Component {
         <div className="container">
           <div className="row" >
             <Books />
-
             <Movies />
             <Music />
+
           </div>
         </div>
       </div>

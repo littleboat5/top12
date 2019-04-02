@@ -6,17 +6,7 @@
 .env
 #webpack.dev.config.js
 sass.sh
-/dev_json/config.json
-/dev_json/genres.json
-/dev_json/movies.json
-/dev_json/google_fic.json
-/dev_json/google_middle.json
-/dev_json/google_nonfic.json
-/dev_json/google_series.json
-/dev_json/nyt_fic.json
-/dev_json/nyt_nonfic.json
-/dev_json/nyt_middle.json
-/dev_json/nyt_series.json
+/dist/dev_json/*
 
 # logs
 npm-debug.log*
